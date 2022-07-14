@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/select</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
+    </style>
+
+    <style name="TextSmall.Grey">
+        <item name="color">@color/unselect</item>
+    </style>
+
+    <style name="TextSmall" parent="TextAppearance">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text20sp" parent="TextAppearance">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Text16sp" parent="TextAppearance">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text16sp.Grey">
+        <item name="android:textColor">@color/unselect</item>
+    </style>
+
+    <style name="Text16sp.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextSmall.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text14sp" parent="TextAppearance">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text14sp.Grey">
+        <item name="android:textColor">@color/unselect</item>
+    </style>
+
+    <style name="Text14sp.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="Text32sp" parent="TextAppearance">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="Text24sp" parent="TextAppearance">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Text24sp.SemiBold">
+        <item name="android:fontFamily">@font/manrope_semibold</item>
+    </style>
+
+    <style name="Text32sp.SemiBold">
+        <item name="android:fontFamily">@font/manrope_semibold</item>
+    </style>
+
+    <style name="Text20sp.SemiBold">
+        <item name="android:fontFamily">@font/manrope_semibold</item>
+    </style>
+
+    <style name="Text32sp.SemiBold.GrayMedium">
+        <item name="android:textColor">@color/grey_medium</item>
+    </style>
+
+
+</resources>

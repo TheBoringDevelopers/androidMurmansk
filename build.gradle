@@ -1,0 +1,48 @@
+buildscript {
+    ext {
+        kotlin_version = '1.4.32'
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
+        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
+        classpath 'com.google.gms:google-services:4.3.10'
+    }
+}
+
+subprojects {
+    pluginManager.withPlugin('com.android.library') {
+        apply plugin: 'kotlin-android'
+        apply plugin: 'kotlin-kapt'
+
+        android {
+            compileSdk 30
+
+            defaultConfig {
+                minSdk 16
+                targetSdk 30
+                versionCode 1
+                versionName "1.0"
+            }
+
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+
+            kotlinOptions {
+                jvmTarget = '1.8'
+            }
+        }
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="vm" type="com.theboringdevelopers.smartmurmansk.activity.enter.age.AgeViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/welcomeTwoText"
+            style="@style/Text16sp.Grey"
+            android:layout_width="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/age_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/number_picker"
+            android:layout_width="112dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="31dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeTwoText"
+            app:np_dividerColor="@color/blue"
+            app:np_dividerDistance="88dp"
+            app:np_dividerLength="112dp"
+            app:np_dividerThickness="4dp"
+            app:np_fadingEdgeEnabled="true"
+            app:np_max="100"
+            app:np_min="0"
+            app:np_selectedTextColor="@color/select"
+            app:np_selectedTextSize="64sp"
+            app:np_textColor="@color/select"
+            app:np_textSize="32sp"
+            app:np_value="18"
+            app:np_wheelItemCount="7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

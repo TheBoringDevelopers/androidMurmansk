@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enter_navigation"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.enter.welcome.WelcomeFragment"
+        android:label="WelcomeFragment">
+        <action
+            android:id="@+id/action_welcomeFragment_to_phoneFragment"
+            app:destination="@id/phoneFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.enter.phone.PhoneFragment"
+        android:label="PhoneFragment">
+        <action
+            android:id="@+id/action_phoneFragment_to_codeFragment"
+            app:destination="@id/codeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+        <action
+            android:id="@+id/action_phoneFragment_to_mainActivity"
+            app:destination="@id/mainActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.MainActivity">
+        <argument
+            android:name="userContext"
+            app:argType="com.theboringdevelopers.smartmurmansk.context.UserContext" />
+    </activity>
+    <fragment
+        android:id="@+id/codeFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.enter.code.CodeFragment"
+        android:label="CodeFragment" >
+        <action
+            android:id="@+id/action_codeFragment_to_fioFragment"
+            app:destination="@id/fioFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+        <argument
+            android:name="sessionId"
+            app:argType="string" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_codeFragment_to_infoFragment"
+            app:destination="@id/infoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fioFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.enter.fio.FioFragment"
+        android:label="FioFragment" >
+        <action
+            android:id="@+id/action_fioFragment_to_genderFragment"
+            app:destination="@id/genderFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/genderFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.enter.gender.GenderFragment"
+        android:label="GenderFragment" >
+        <action
+            android:id="@+id/action_genderFragment_to_ageFragment"
+            app:destination="@id/ageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/ageFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.enter.age.AgeFragment"
+        android:label="AgeFragment" >
+        <action
+            android:id="@+id/action_ageFragment_to_personalPreferencesFragment"
+            app:destination="@id/personalPreferencesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalPreferencesFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.enter.personal_preferences.PersonalPreferencesFragment"
+        android:label="PersonalPreferencesFragment" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.enter.info.InfoFragment"
+        android:label="InfoFragment" >
+        <action
+            android:id="@+id/action_infoFragment_to_mainActivity"
+            app:destination="@id/mainActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+</navigation>

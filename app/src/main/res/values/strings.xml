@@ -1,0 +1,54 @@
+<resources>
+    <!-- Navigation -->
+    <string name="profile">Профиль</string>
+    <string name="home">Лента</string>
+    <string name="activity">Активность</string>
+    <string name="events">Расписание</string>
+
+    <!-- Bottoms -->
+    <string name="login">Вход</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="write_phone">Введите номер телефона</string>
+    <string name="registration">Регистрация</string>
+    <string name="welcome_home">Привет 👋</string>
+    <string name="enter_to_account">Войдите в свой аккаунт</string>
+    <string name="login_to_acc">Войти</string>
+    <string name="login_with">Войти через</string>
+    <string name="create_team">Создай или найди команду, чтобы участвовать в командных соревнованиях</string>
+    <string name="search">Найти</string>
+    <string name="create">Создать</string>
+    <string name="personal_info">Личные данные</string>
+    <string name="settings">Настройки</string>
+    <string name="support">Служба поддержки</string>
+    <string name="start">Начать</string>
+    <string name="logout">Выйти</string>
+    <string name="phone_mask">+7 000 000-00-00</string>
+    <string name="write_code">Введите код</string>
+    <string name="write_code_hint">Мы отправили код подтверждения на ваш телефон. Введите код из смс в поле ниже.</string>
+    <string name="continue_arrow_button">Далее&#160;&#160;→</string>
+    <string name="retry_code">Не получили код?</string>
+    <string name="about">Расскажите нам \nнемного о себе</string>
+    <string name="fio_hint">Как к вам обращаться</string>
+    <string name="second_name">Фамилия</string>
+    <string name="gender_hint">Ваш пол</string>
+    <string name="age_hint">Ваш возраст</string>
+    <string name="personal_preferences_title">и о ваших \nпредпочтениях</string>
+    <string name="personal_preferences_hint">Любимые виды спорта</string>
+    <string name="name_of_team">Название команды</string>
+    <string name="description_team">О команде</string>
+
+    <string name="wrong_credentials">Некорректные логин или пароль</string>
+    <string name="request_error">Ошибка запроса</string>
+    <string name="unknown_error">Неизвестная ошибка</string>
+    <string name="name_of_org">Название организации</string>
+    <string name="like_sports">Любимые виды спорта</string>
+    <string name="save">Сохранить</string>
+    <string name="last_name">Фамилия</string>
+    <string name="name">Имя</string>
+    <string name="patronymic">Отчество</string>
+    <string name="send_invite">Отправить приглашение другу</string>
+    <string name="six_teams">Вам нужно набрать 6 человек, чтобы принять участие в соревнованиях</string>
+    <string name="find_players">Найти участников</string>
+    <string name="hi">Привет 👋</string>
+
+</resources>

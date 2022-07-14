@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.fraggjkee:sms-confirmation-view:1.7.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f2c3dbda83849e0b505860cbccbcb3af/transformed/jetified-sms-confirmation-view-1.7.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f2c3dbda83849e0b505860cbccbcb3af/transformed/jetified-sms-confirmation-view-1.7.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f2c3dbda83849e0b505860cbccbcb3af/transformed/jetified-sms-confirmation-view-1.7.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.fraggjkee/sms-confirmation-view/1.7.1/eb1b3d37767f7dfd0913ac3895485068a753a25d/sms-confirmation-view-1.7.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

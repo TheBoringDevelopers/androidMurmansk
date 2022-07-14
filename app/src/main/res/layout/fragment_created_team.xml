@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="vm" type="com.theboringdevelopers.smartmurmansk.activity.main.team.ura.CelebrationTeamViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_close"
+            android:layout_margin="10dp"
+            android:onClick="@{vm::close}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        
+        <ImageView
+            android:id="@+id/uraIv"
+            android:layout_width="246dp"
+            android:layout_height="246dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/ura"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/createTv"
+            style="@style/Text24sp.SemiBold"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:text="Вы создали команду \n“Дрим Тим”"
+            app:layout_constraintTop_toBottomOf="@id/uraIv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            style="@style/Text16sp"
+            android:text="@string/six_teams"
+            app:layout_constraintTop_toBottomOf="@id/createTv"
+            android:padding="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="center"/>
+
+        <Button
+            style="@style/Button"
+            android:layout_height="56dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/find_players"
+            android:onClick="@{vm::find"
+            app:layout_constraintBottom_toTopOf="@id/sendInviteBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/sendInviteBtn"
+            style="@style/Button"
+            android:layout_height="56dp"
+            android:layout_margin="24dp"
+            android:backgroundTint="@color/blue_secondary"
+            android:textColor="@color/select"
+            android:text="@string/send_invite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

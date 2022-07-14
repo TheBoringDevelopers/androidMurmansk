@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.MainActivity">
+        <argument
+            android:name="userContext"
+            app:argType="com.theboringdevelopers.smartmurmansk.context.UserContext" />
+    </activity>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_profileFragment_to_moreSheetFragment"
+            app:destination="@id/celebrationFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_storiesFragment"
+            app:destination="@id/storiesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/celebrationFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.celebration.CelebrationFragment"
+        android:label="CelebrationFragment"
+        tools:layout="@layout/fragment_celebration"/>
+
+    <fragment
+        android:id="@+id/createTeamFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.team.CreateTeamFragment"
+        android:label="CreateTeamFragment"
+        tools:layout="@layout/fragment_create_team">
+        <action
+            android:id="@+id/action_createTeamFragment_to_moreSheetFragment"
+            app:destination="@id/moreSheet"/>
+        <action
+            android:id="@+id/action_createTeamFragment_to_profileFragment"
+            app:destination="@id/celebrationCreateFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/findTeamFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.team.find.FindTeamFragment"
+        android:label="FindTeamFragment"
+        tools:layout="@layout/fragment_find_team"/>
+
+    <fragment
+        android:id="@+id/celebrationCreateFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.team.ura.CelebrationTeamFragment"
+        android:label="CelebrationTeamFragment"
+        tools:layout="@layout/fragment_created_team">
+        <action
+            android:id="@+id/action_celebrationCreateFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+        <action
+            android:id="@+id/action_celebrationCreateFragment_to_findTeamFragment"
+            app:destination="@id/findTeamFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_createTeamFragment"
+            app:destination="@id/createTeamFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+        <action
+            android:id="@+id/action_profileFragment_to_findTeamFragment"
+            app:destination="@id/findTeamFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
+
+    <dialog
+        android:id="@+id/moreSheet"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.dialog.MoreSheetDialog"
+        android:label="MoreSheet"
+        tools:layout="@layout/select_sport_sheet_dialog">
+    </dialog>
+    <fragment
+        android:id="@+id/storiesFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.home.stories.StoriesFragment"
+        android:label="StoriesFragment" >
+        <action
+            android:id="@+id/action_storiesFragment_to_storyFragment"
+            app:destination="@id/storyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+        <argument
+            android:name="storiesWrapper"
+            app:argType="com.theboringdevelopers.smartmurmansk.activity.main.home.HomeViewModel$StoriesWrapper" />
+    </fragment>
+    <fragment
+        android:id="@+id/storyFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.home.stories.story.StoryFragment"
+        android:label="StoryFragment" />
+
+
+</navigation>

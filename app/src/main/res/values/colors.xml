@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="base_timeout">60</integer>
+    
+    <!-- Smart Color-->
+    <color name="blue">#00A5E1</color>
+    <color name="blue_secondary">#E1F7FF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white20">#33FFFFFF</color>
+    <color name="grey_light">#F7FAFC</color>
+    <color name="grey">#9CA3AF</color>
+    <color name="unselect">#8E9FB8</color>
+    <color name="select">#0D112C</color>
+    <color name="background">#ffffff</color>
+    <color name="grey_medium">#CCD3E3</color>
+    <color name="transparent">#00000000</color>
+
+</resources>
