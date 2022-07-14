@@ -6,13 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import com.theboringdevelopers.smartmurmansk.R
 import com.theboringdevelopers.smartmurmansk.activity.EnterViewModel
+import com.theboringdevelopers.smartmurmansk.activity.main.home.stories.news.NewsTabAdapter
 import com.theboringdevelopers.smartmurmansk.context.UserContext
 import com.theboringdevelopers.smartmurmansk.databinding.FragmentInfoBinding
 import com.theboringdevelopers.smartmurmansk.databinding.FragmentStoriesBinding
@@ -80,6 +83,7 @@ class StoriesFragment : Fragment() {
 
         binding.bottomLL.setOnClickListener {
             job.cancel()
+            binding.slidingLayout.panelState = SlidingUpPanelLayout.PanelState.EXPANDED
         }
 
         binding.closeIV.setOnClickListener {
@@ -87,11 +91,44 @@ class StoriesFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+        binding.slidingLayout.coveredFadeColor = ContextCompat.getColor(requireContext(), R.color.transparent)
+        binding.slidingLayout.setFadeOnClickListener {
+            binding.slidingLayout.panelState = SlidingUpPanelLayout.PanelState.HIDDEN
+        }
+
+        binding.slidingLayout.addPanelSlideListener(object :
+            SlidingUpPanelLayout.PanelSlideListener {
+            override fun onPanelSlide(panel: View, slideOffset: Float) {}
+            override fun onPanelStateChanged(
+                panel: View,
+                previousState: SlidingUpPanelLayout.PanelState,
+                newState: SlidingUpPanelLayout.PanelState
+            ) {
+                if (newState == SlidingUpPanelLayout.PanelState.COLLAPSED) {
+                    binding.slidingLayout.panelState = SlidingUpPanelLayout.PanelState.HIDDEN
+                }
+                if (newState == SlidingUpPanelLayout.PanelState.EXPANDED) {
+                    job.cancel()
+                }
+                if (newState == SlidingUpPanelLayout.PanelState.HIDDEN) {
+                    startJob()
+                }
+            }
+        })
+
+        binding.dragImageView.setOnClickListener {
+            binding.slidingLayout.panelState = SlidingUpPanelLayout.PanelState.HIDDEN
+        }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.newsPager.adapter = NewsTabAdapter(this, args.storiesWrapper.stories)
+        binding.newsPager.offscreenPageLimit = 3
+        binding.newsPager.isUserInputEnabled = false
 
         binding.pager.adapter = StoriesTabAdapter(this, args.storiesWrapper.stories)
         binding.pager.offscreenPageLimit = 3

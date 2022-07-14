@@ -6,6 +6,11 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/bb03f64352e22c6f897fa036b7444204/transformed/jetified-Bubble-Picker-v0.2.4/jars/libs/slf4j-api-1.7.22.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bb03f64352e22c6f897fa036b7444204/transformed/jetified-Bubble-Picker-v0.2.4/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bb03f64352e22c6f897fa036b7444204/transformed/jetified-Bubble-Picker-v0.2.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cbfb1bc703a8126566ebf9f86dafc91f/transformed/jetified-Bubble-Picker-v0.2.4/jars/libs/jbox2d-library-2.1.2.2.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cbfb1bc703a8126566ebf9f86dafc91f/transformed/jetified-Bubble-Picker-v0.2.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cbfb1bc703a8126566ebf9f86dafc91f/transformed/jetified-Bubble-Picker-v0.2.4/jars/libs/slf4j-api-1.7.22.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cbfb1bc703a8126566ebf9f86dafc91f/transformed/jetified-Bubble-Picker-v0.2.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cbfb1bc703a8126566ebf9f86dafc91f/transformed/jetified-Bubble-Picker-v0.2.4/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
