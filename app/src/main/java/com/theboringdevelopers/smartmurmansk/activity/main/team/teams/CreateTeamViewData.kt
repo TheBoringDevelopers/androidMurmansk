@@ -34,7 +34,7 @@ class CreateTeamViewData : BaseObservable() {
         }
 
     @get:Bindable
-    var city: String = ""
+    var city: String = "Мурманск"
         set(value) {
             field = value
             notifyPropertyChanged(BR.city)

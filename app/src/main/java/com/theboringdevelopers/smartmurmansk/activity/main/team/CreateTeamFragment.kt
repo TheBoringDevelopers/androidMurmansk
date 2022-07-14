@@ -9,10 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.theboringdevelopers.smartmurmansk.databinding.FragmentCreateTeamBinding
-import com.theboringdevelopers.smartmurmansk.util.EventObserver
-import com.theboringdevelopers.smartmurmansk.util.hideBottomNavBar
-import com.theboringdevelopers.smartmurmansk.util.showBottomNavBar
+import com.theboringdevelopers.smartmurmansk.util.*
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class CreateTeamFragment : Fragment() {
@@ -38,6 +37,18 @@ class CreateTeamFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.errorMessage.observe(requireActivity(), EventObserver {
+            activity?.showErrorSnackBar(it)
+        })
+
+        viewModel.infoMessage.observe(requireActivity(), EventObserver {
+            activity?.showInfoSnackBar(it)
+        })
+
+        binding.switchBtn.setOnCheckedChangeListener { view, isChecked ->
+            viewModel.data.organization = !viewModel.data.organization
+        }
 
         viewModel.confirm.observe(requireActivity(), EventObserver {
             findNavController().navigate(CreateTeamFragmentDirections.actionCreateTeamFragmentToProfileFragment())

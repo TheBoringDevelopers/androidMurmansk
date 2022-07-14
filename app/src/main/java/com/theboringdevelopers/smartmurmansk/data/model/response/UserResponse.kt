@@ -14,4 +14,8 @@ data class UserResponse(
     val description: String,
     val sportTypes: List<SportType>,
     val image: Image
-)
+) {
+    fun fio() = "$firstName $lastName"
+
+    fun getAgeString() = "$age лет"
+}

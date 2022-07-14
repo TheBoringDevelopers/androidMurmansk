@@ -1,10 +1,12 @@
 package com.theboringdevelopers.smartmurmansk.data.remote
 
+import com.theboringdevelopers.smartmurmansk.data.model.bean.Team
 import com.theboringdevelopers.smartmurmansk.data.model.bean.UserInfo
 import com.theboringdevelopers.smartmurmansk.data.model.request.CreateTeamRequest
 import com.theboringdevelopers.smartmurmansk.data.model.request.RegistrationConfirmationRequest
 import com.theboringdevelopers.smartmurmansk.data.model.response.AuthResponse
 import com.theboringdevelopers.smartmurmansk.data.model.response.RegistrationResponse
+import com.theboringdevelopers.smartmurmansk.data.model.response.TeamResponse
 import com.theboringdevelopers.smartmurmansk.data.model.response.UserResponse
 import kotlinx.coroutines.Deferred
 import okhttp3.ResponseBody
@@ -50,4 +52,8 @@ interface ServerApi {
     @GET("secured/user")
     fun user(
     ): Deferred<Response<UserResponse>>
+
+    @GET("/secured/team/list")
+    fun teams(
+    ): Deferred<Response<List<TeamResponse>>>
 }

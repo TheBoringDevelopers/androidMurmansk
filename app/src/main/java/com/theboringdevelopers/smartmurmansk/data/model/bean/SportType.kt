@@ -2,6 +2,5 @@ package com.theboringdevelopers.smartmurmansk.data.model.bean
 
 data class SportType(
     val id: Long,
-    val name: String,
-    val image: Image
+    val name: String
 )
