@@ -1,5 +1,8 @@
 package com.theboringdevelopers.smartmurmansk.activity.enter.phone
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputFilter
@@ -9,10 +12,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.exoplayer2.offline.DownloadService.startForeground
 import com.theboringdevelopers.smartmurmansk.R
 import com.theboringdevelopers.smartmurmansk.activity.EnterViewModel
 import com.theboringdevelopers.smartmurmansk.data.repository.AuthRepository

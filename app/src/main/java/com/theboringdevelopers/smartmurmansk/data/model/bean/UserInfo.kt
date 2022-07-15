@@ -8,5 +8,5 @@ data class UserInfo(
     val patronymic: String,
     val age: Long,
     val gender: Boolean,
-    val email: String? = null
+    val email: String? = null,
 )

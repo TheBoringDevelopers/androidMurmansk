@@ -3,6 +3,7 @@ package com.theboringdevelopers.smartmurmansk.data.remote
 import com.theboringdevelopers.smartmurmansk.data.model.bean.UserInfo
 import com.theboringdevelopers.smartmurmansk.data.model.request.CreateTeamRequest
 import com.theboringdevelopers.smartmurmansk.data.model.request.RegistrationConfirmationRequest
+import com.theboringdevelopers.smartmurmansk.data.model.request.UpdateUserRequest
 import com.theboringdevelopers.smartmurmansk.data.model.response.AuthResponse
 import com.theboringdevelopers.smartmurmansk.data.model.response.RegistrationResponse
 import com.theboringdevelopers.smartmurmansk.data.model.response.UserResponse
@@ -35,7 +36,7 @@ interface ServerApi {
 
     @PUT("/secured/user")
     fun updateUser(
-        @Body userInfo: UserInfo
+        @Body updateUserRequest: UpdateUserRequest
     ): Deferred<Response<ResponseBody>>
 
     @POST("secured/team")

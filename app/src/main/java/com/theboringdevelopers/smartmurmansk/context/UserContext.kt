@@ -19,6 +19,11 @@ data class UserContext (
 
     fun copy(from: UserContext) {
         userId = from.userId
+        name = from.name
+        lastName = from.lastName
+        patronymic = from.patronymic
+        age = from.age
+        gender = from.gender
         login = from.login
         accessToken = from.accessToken
         refreshToken = from.refreshToken

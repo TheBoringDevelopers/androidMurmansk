@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.theboringdevelopers.smartmurmansk.context.UserContext
+import com.theboringdevelopers.smartmurmansk.data.model.bean.SportType
 import com.theboringdevelopers.smartmurmansk.data.repository.UserRepository
 import com.theboringdevelopers.smartmurmansk.util.BaseViewModel
 import com.theboringdevelopers.smartmurmansk.util.Event
@@ -50,7 +51,7 @@ class InfoViewModel@Inject constructor(
             try {
                 progress.set(true)
                 userRepository.updateUserInfo(
-                    phoneNumber, firstName, lastName, patronymic, age, gender
+                    phoneNumber, firstName, lastName, patronymic, age, gender, listOf(SportType(name = "баскетбол"))
                 )
                 userContext.login = phoneNumber
                 userContext.name = firstName

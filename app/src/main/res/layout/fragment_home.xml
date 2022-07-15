@@ -48,8 +48,7 @@
                 tools:text="Анна"
                 app:layout_constraintBottom_toBottomOf="@id/avatarIv"
                 app:layout_constraintStart_toEndOf="@id/avatarIv"
-                android:text="Анна" />
-<!--                android:text="@{vm.userContext.name}" />-->
+                android:text="@{vm.userContext.name}" />
 
             <ImageView
                 android:layout_width="48dp"
@@ -77,7 +76,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="34dp"
+                    android:clipToPadding="false"
                     android:orientation="horizontal"
+                    android:paddingLeft="16dp"
                     android:overScrollMode="never"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"

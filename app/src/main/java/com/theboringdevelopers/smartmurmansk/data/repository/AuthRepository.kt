@@ -115,8 +115,7 @@ class AuthRepository @Inject constructor(
                     "",
                     0,
                     true,
-                    ""
-                ),
+                    ""),
                 confirmationCode,
                 sessionId,
                 emptyList()

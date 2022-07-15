@@ -24,16 +24,41 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-<!--        <com.igalata.bubblepicker.rendering.BubblePicker-->
-<!--            android:id="@+id/picker"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            app:backgroundColor="@android:color/white"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/welcomeTwoText" />-->
+        <ImageView
+            android:id="@+id/ball"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="133dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="117dp"
+            android:src="@mipmap/volleyw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeTwoText" />
+
+
+        <ImageView
+            android:id="@+id/tennis"
+            android:layout_width="109dp"
+            android:layout_height="109dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="50dp"
+            android:src="@mipmap/tennisw"
+            app:layout_constraintEnd_toStartOf="@+id/ball"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeTwoText" />
+
+        <ImageView
+            android:id="@+id/bascket"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="59dp"
+            android:layout_marginEnd="16dp"
+            android:src="@mipmap/bascketw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ball"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeTwoText" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
