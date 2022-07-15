@@ -50,7 +50,9 @@ class TeamRepository  @Inject constructor(
     ) : List<TeamResponse> {
         return try {
             val result = safeApiCall {
-                serverApi.teams().await()
+                serverApi.teams(
+                    true
+                ).await()
             }.data
             result
         } catch (th: Throwable) {

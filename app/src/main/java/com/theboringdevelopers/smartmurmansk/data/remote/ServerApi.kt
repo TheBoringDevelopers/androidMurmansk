@@ -61,5 +61,6 @@ interface ServerApi {
 
     @GET("/secured/team/list")
     fun teams(
+        @Query("empty") boolean: Boolean
     ): Deferred<Response<List<TeamResponse>>>
 }
