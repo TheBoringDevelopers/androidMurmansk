@@ -55,14 +55,14 @@
                 <TextView
                     style="@style/Text20sp"
                     android:layout_marginTop="16dp"
-                    android:text="Анна Белякова"
+                    android:text="@{vm.data.name}"
                     android:layout_gravity="center_horizontal"
                     android:fontFamily="@font/manrope_bold"/>
 
                 <TextView
                     style="@style/Text14sp"
                     android:layout_marginTop="10dp"
-                    android:text="37 лет"
+                    android:text="@{vm.data.age}"
                     android:textColor="#828282"
                     android:layout_gravity="center_horizontal" />
 
@@ -117,10 +117,12 @@
                     android:text="О себе"
                     android:fontFamily="@font/manrope_medium" />
 
-                <EditText
+                <TextView
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:minHeight="136dp"
+                    android:padding="10dp"
+                    android:text="@{vm.data.description}"
                     android:inputType="text"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey_light"

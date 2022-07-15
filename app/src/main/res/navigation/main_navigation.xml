@@ -43,8 +43,8 @@
         android:label="PlayerFragment"
         tools:layout="@layout/fragment_player">
         <argument
-            android:name="id"
-            app:argType="long" />
+            android:name="user"
+            app:argType="com.theboringdevelopers.smartmurmansk.data.model.response.UserResponse" />
     </fragment>
 
     <fragment

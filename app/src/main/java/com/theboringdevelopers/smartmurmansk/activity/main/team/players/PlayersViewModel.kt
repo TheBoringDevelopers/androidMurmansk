@@ -40,7 +40,7 @@ class PlayersViewModel@Inject constructor(
     }
 
     fun enter(v: View, item: ItemViewModel) {
-        v.findNavController().navigate(FindTeamFragmentDirections.actionFindTeamFragmentToPlayerFragment((item as PlayerItemModel).player.id))
+        v.findNavController().navigate(FindTeamFragmentDirections.actionFindTeamFragmentToPlayerFragment((item as PlayerItemModel).player))
     }
 
 }

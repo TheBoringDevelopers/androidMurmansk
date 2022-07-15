@@ -53,6 +53,11 @@ interface ServerApi {
     fun user(
     ): Deferred<Response<UserResponse>>
 
+    @GET("secured/user")
+    fun userById(
+        @Query ("userId") id: Long
+    ): Deferred<Response<UserResponse>>
+
     @GET("/secured/team/list")
     fun teams(
     ): Deferred<Response<List<TeamResponse>>>
