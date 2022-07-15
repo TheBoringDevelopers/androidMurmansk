@@ -4,6 +4,7 @@ import com.theboringdevelopers.smartmurmansk.context.UserContext
 import com.theboringdevelopers.smartmurmansk.data.model.bean.SportType
 import com.theboringdevelopers.smartmurmansk.data.model.bean.UserInfo
 import com.theboringdevelopers.smartmurmansk.data.model.request.UpdateUserRequest
+import com.theboringdevelopers.smartmurmansk.data.model.response.UserResponse
 import com.theboringdevelopers.smartmurmansk.data.remote.ServerApi
 import com.theboringdevelopers.smartmurmansk.util.helpers.HttpUtils
 import okhttp3.ResponseBody
@@ -33,5 +34,16 @@ class UserRepository@Inject constructor(
                 gender = gender
             ), sportTypes)).await()
         }.data
+    }
+
+    suspend fun getUser(id: Long) : UserResponse {
+        return try {
+            val result = HttpUtils.safeApiCall {
+                serverApi.userById(id).await()
+            }.data
+            result
+        } catch (th: Throwable) {
+            error(th.message.toString())
+        }
     }
 }

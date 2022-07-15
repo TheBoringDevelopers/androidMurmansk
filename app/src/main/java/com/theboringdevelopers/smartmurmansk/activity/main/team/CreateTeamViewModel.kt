@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
 import com.theboringdevelopers.smartmurmansk.activity.main.team.teams.CreateTeamViewData
 import com.theboringdevelopers.smartmurmansk.context.UserContext
+import com.theboringdevelopers.smartmurmansk.data.model.bean.Image
+import com.theboringdevelopers.smartmurmansk.data.model.bean.SportType
 import com.theboringdevelopers.smartmurmansk.data.model.bean.Team
 import com.theboringdevelopers.smartmurmansk.data.repository.AuthRepository
 import com.theboringdevelopers.smartmurmansk.data.repository.TeamRepository
@@ -30,12 +32,17 @@ class CreateTeamViewModel@Inject constructor(
     val confirm: LiveData<Event<Any>> = _confirm
 
     fun create(v: View) {
-        if (data.progress) {
-            return
-        }
         viewModelScope.launch(Dispatchers.IO) {
             data.error = false
             data.progress = true
+
+            val sportTypes = arrayListOf(
+                SportType(0 ,"Футбол"),
+                SportType(0 ,"Баскетбол"),
+                SportType(0 ,"Тенис"),
+                SportType(0 ,"Хоккей"),
+                SportType(0 ,"Плавание")
+            )
 
             try {
                 teamRepository.create(
@@ -47,7 +54,8 @@ class CreateTeamViewModel@Inject constructor(
                         data.description,
                         data.organization,
                         data.organizationName
-                    )
+                    ),
+                    listOf()
                 )
             }  catch (e: Exception) {
                 errorMessage.postValue(Event(e.message ?: "Неизвестная ошибка"))
@@ -61,13 +69,11 @@ class CreateTeamViewModel@Inject constructor(
         }
     }
 
+    fun back(v: View) {
+        v.findNavController().popBackStack()
+    }
+
     fun selectSports(v: View) {
         v.findNavController().navigate(CreateTeamFragmentDirections.actionCreateTeamFragmentToMoreSheetFragment())
     }
-
-    fun org(v: View) {
-        data.organization = !data.organization
-    }
-
-
 }

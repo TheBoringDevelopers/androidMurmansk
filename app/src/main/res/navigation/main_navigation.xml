@@ -38,6 +38,16 @@
         tools:layout="@layout/fragment_celebration"/>
 
     <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.theboringdevelopers.smartmurmansk.activity.main.team.players.player.PlayerFragment"
+        android:label="PlayerFragment"
+        tools:layout="@layout/fragment_player">
+        <argument
+            android:name="user"
+            app:argType="com.theboringdevelopers.smartmurmansk.data.model.response.UserResponse" />
+    </fragment>
+
+    <fragment
         android:id="@+id/createTeamFragment"
         android:name="com.theboringdevelopers.smartmurmansk.activity.main.team.CreateTeamFragment"
         android:label="CreateTeamFragment"
@@ -59,7 +69,15 @@
         android:id="@+id/findTeamFragment"
         android:name="com.theboringdevelopers.smartmurmansk.activity.main.team.find.FindTeamFragment"
         android:label="FindTeamFragment"
-        tools:layout="@layout/fragment_find_team"/>
+        tools:layout="@layout/fragment_find_team">
+        <action
+            android:id="@+id/action_findTeamFragment_to_playerFragment"
+            app:destination="@id/playerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"/>
+    </fragment>
 
     <fragment
         android:id="@+id/celebrationCreateFragment"

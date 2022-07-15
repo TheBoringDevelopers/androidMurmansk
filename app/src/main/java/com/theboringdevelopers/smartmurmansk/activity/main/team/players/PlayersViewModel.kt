@@ -1,8 +1,11 @@
 package com.theboringdevelopers.smartmurmansk.activity.main.team.players
 
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.findNavController
+import com.theboringdevelopers.smartmurmansk.activity.main.team.find.FindTeamFragmentDirections
 import com.theboringdevelopers.smartmurmansk.context.UserContext
 import com.theboringdevelopers.smartmurmansk.data.repository.AuthRepository
 import com.theboringdevelopers.smartmurmansk.data.repository.TeamRepository
@@ -34,6 +37,10 @@ class PlayersViewModel@Inject constructor(
             _data.postValue(viewData)
             progress.set(false)
         }
+    }
+
+    fun enter(v: View, item: ItemViewModel) {
+        v.findNavController().navigate(FindTeamFragmentDirections.actionFindTeamFragmentToPlayerFragment((item as PlayerItemModel).player))
     }
 
 }

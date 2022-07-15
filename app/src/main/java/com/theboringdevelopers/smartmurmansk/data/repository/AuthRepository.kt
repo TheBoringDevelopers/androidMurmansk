@@ -44,11 +44,11 @@ class AuthRepository @Inject constructor(
                 serverApi.user().await()
             }.data
 
-            userContext.name = user.firstName
-            userContext.lastName = user.lastName
+            userContext.name = user.firstName!!
+            userContext.lastName = user.lastName!!
             userContext.gender = user.gender
-            userContext.age = user.age
-            userContext.patronymic = user.patronymic
+            userContext.age = user.age!!
+            userContext.patronymic = user.patronymic!!
 
             return LoginResponse(
                 null,

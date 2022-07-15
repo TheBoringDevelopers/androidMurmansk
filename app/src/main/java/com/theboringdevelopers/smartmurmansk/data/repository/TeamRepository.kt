@@ -1,8 +1,10 @@
 package com.theboringdevelopers.smartmurmansk.data.repository
 
 import android.content.Context
+import com.theboringdevelopers.smartmurmansk.data.model.bean.SportType
 import com.theboringdevelopers.smartmurmansk.data.model.bean.Team
 import com.theboringdevelopers.smartmurmansk.data.model.request.CreateTeamRequest
+import com.theboringdevelopers.smartmurmansk.data.model.response.TeamResponse
 import com.theboringdevelopers.smartmurmansk.data.model.response.UserResponse
 import com.theboringdevelopers.smartmurmansk.data.remote.ServerApi
 import com.theboringdevelopers.smartmurmansk.util.helpers.HttpUtils.safeApiCall
@@ -17,12 +19,14 @@ class TeamRepository  @Inject constructor(
 
     suspend fun create(
         userId: Long,
-        team: Team
+        team: Team,
+        sportTypes: List<SportType>
     ) : ResponseBody {
         return safeApiCall {
             serverApi.createTeam(CreateTeamRequest(
                 userId = userId,
-                team = team
+                team = team,
+                sportTypes = sportTypes
             )).await()
         }.data
     }
@@ -33,6 +37,20 @@ class TeamRepository  @Inject constructor(
         return try {
             val result = safeApiCall {
                 serverApi.users().await()
+            }.data
+            result
+        } catch (th: Throwable) {
+            error(th.message.toString())
+            emptyList()
+        }
+    }
+
+    suspend fun teams(
+        error: (String) -> Unit
+    ) : List<TeamResponse> {
+        return try {
+            val result = safeApiCall {
+                serverApi.teams().await()
             }.data
             result
         } catch (th: Throwable) {
